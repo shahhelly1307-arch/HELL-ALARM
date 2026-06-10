@@ -12,7 +12,7 @@ export function pctOf(value: number, parentDesignWidth: number): string {
 }
 
 export function designVw(designPx: number): string {
-  return `${(designPx / FRAME_W) * 100}vw`
+  return `${designPx}px`
 }
 
 export type PanelId = 'timer' | 'tasks' | 'stats' | 'settings'
