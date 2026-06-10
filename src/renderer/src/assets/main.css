@@ -1,22 +1,49 @@
 @import './base.css';
 
+@import './base.css';
+
 .window-root {
   position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5e8ef;
 }
 
-/* The .canvas keeps its native 1:1 design ratio (sized by 100vw only — never stretched).
-   It's scaled so that the 451-unit-wide visible frame portion fills 100vw, then offset
-   so the frame's top-left (design 30,77) lands at the window's top-left. The OS window
-   is locked to a matching 451:366 aspect via setAspectRatio in src/main/index.ts. */
+/* ── Web mode ──────────────────────────────────────────────────────────────────
+   The app was designed for a fixed 451×366px Electron window.
+   On the web we center a scaled version: the visible frame is 451×366 design
+   units. We fit it inside the viewport while keeping the pixel-art crisp.
+   The canvas is 512×512 design units; only the inner 451×366 region is visible.
+   We scale so that region fills as much of the viewport as possible (up to 2×),
+   then offset the canvas so design-point (30,77) lands at the container's origin. */
+.window-root > .canvas-wrapper {
+  position: relative;
+  width: min(451px, 100vw, calc(100vh * 451 / 366));
+  height: min(366px, 100vh, calc(100vw * 366 / 451));
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Scale up on bigger screens — max 2× for crisp pixel art */
+@media (min-width: 902px) and (min-height: 732px) {
+  .window-root > .canvas-wrapper {
+    width: 902px;
+    height: 732px;
+  }
+}
+
+/* The .canvas is always 512/451 times the wrapper width, offset so the
+   visible region (design 30,77 → 481,443) starts at the wrapper's top-left. */
 .canvas {
   position: absolute;
-  width: calc(100vw * 512 / 451);
-  height: calc(100vw * 512 / 451);
-  left: calc(-100vw * 30 / 451);
-  top: calc(-100vw * 77 / 451);
+  width: calc(100% * 512 / 451);
+  height: calc(100% * 512 / 451);
+  left: calc(-100% * 30 / 451);
+  top: calc(-100% * 77 / 451);
 }
 
 .debug-canvas {
