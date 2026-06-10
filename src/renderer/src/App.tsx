@@ -3,16 +3,13 @@ import figmaData from './figma-text.json'
 import { themed } from './lib/assets'
 import {
   designVw,
-  DRAG_REGION,
   FRAME_CONTENT,
   FRAME_FOOTPRINT,
   type Hitbox,
   type PanelId,
   pct,
   RESET_HITBOX,
-  SIDE_PANEL,
-  WINDOW_CONTROLS,
-  type WindowControlId
+  SIDE_PANEL
 } from './lib/canvas'
 import {
   classifyImageNode,
@@ -56,16 +53,11 @@ function renderFigmaText(
 ): React.JSX.Element {
   const bbox = node.bboxRelative ?? node.bbox
   const text = dynamicTextFor(node.name, dyn) ?? node.text
-  // Shift "pomodoros completed" right when the count grows from 1 to 2+ digits
-  // so the visual gap between number and label stays constant.
   const NUMBER_DIGIT_WIDTH_AT_FS20 = 11
   const extraDigits = Math.max(0, String(dyn.pomodorosToday).length - 1)
   const leftOffset =
     node.name === 'pomodoros completed' ? extraDigits * NUMBER_DIGIT_WIDTH_AT_FS20 : 0
 
-  // The phase label swaps to wider text ("SHORT BREAK" / "LONG BREAK") that would
-  // wrap inside the narrow "STUDY TIME" box — keep it on one line, centered on the
-  // box's center so every phase stays put.
   const base: CSSProperties = {
     top: pct(bbox.y),
     height: pct(bbox.height),
@@ -131,12 +123,6 @@ function App(): React.JSX.Element {
     saveSettings(settings)
   }, [settings])
 
-  function handleWindowControl(id: WindowControlId): void {
-    if (id === 'minimize') window.api.window.minimize()
-    else if (id === 'maximize') window.api.window.toggleMaximize()
-    else if (id === 'close') window.api.window.close()
-  }
-
   return (
     <div className={`window-root ${dark ? 'dark' : ''}`}>
       <div className={`canvas ${debug ? 'debug-canvas' : ''}`}>
@@ -171,13 +157,11 @@ function App(): React.JSX.Element {
         {/* Always-on chrome + per-panel Figma assets */}
         {!debug && (
           <>
-            {/* Timer assets render ALWAYS as the base view (the room scene behind the window). */}
             {(figmaData.imageNodes as FigmaImageNode[]).map((node) => {
               const panel = classifyImageNode(node)
               if (panel !== 'timer') return null
               if (!shouldRenderImageNode(node)) return null
               const baseName = stripFigmaSuffix(node.name)
-              // Swap play/pause and the cat with the current run state.
               if (baseName === 'play' && timer.running) return null
               if (baseName === 'pause' && !timer.running) return null
               if (baseName === 'cat-awake' && !timer.running) return null
@@ -217,15 +201,6 @@ function App(): React.JSX.Element {
               />
             ))}
 
-            {WINDOW_CONTROLS.map((b) => (
-              <img
-                key={`icon-${b.id}`}
-                className="canvas-layer"
-                src={themed(`main/${b.asset}.png`, dark)}
-                alt=""
-              />
-            ))}
-
             <img className="canvas-layer" src={themed('main/today-count.png', dark)} alt="" />
             <img className="canvas-layer" src={themed('main/reset.png', dark)} alt="" />
             <img className="canvas-layer" src={themed('main/skip.png', dark)} alt="" />
@@ -245,7 +220,6 @@ function App(): React.JSX.Element {
               {timer.pomodorosToday}
             </div>
 
-            {/* Timer + always-on chrome text — renders below the overlay panels. */}
             {(figmaData.textNodes as FigmaTextNode[]).map((node) => {
               if (SKIP_TEXT_NAMES.has(node.name)) return null
               const panel = classifyTextNode(node)
@@ -253,7 +227,6 @@ function App(): React.JSX.Element {
               return renderFigmaText(node, dyn, dark)
             })}
 
-            {/* Tasks/Stats/Settings panel assets render ABOVE the main chrome. */}
             {active !== 'timer' &&
               (figmaData.imageNodes as FigmaImageNode[]).map((node) => {
                 const panel = classifyImageNode(node)
@@ -280,7 +253,6 @@ function App(): React.JSX.Element {
           </>
         )}
 
-        {/* Active panel's own text — renders above its overlay assets (when not timer). */}
         {!debug &&
           active !== 'timer' &&
           (figmaData.textNodes as FigmaTextNode[]).map((node) => {
@@ -290,13 +262,10 @@ function App(): React.JSX.Element {
             return renderFigmaText(node, dyn, dark)
           })}
 
-        {/* Background music — runs regardless of the active panel so it keeps
-            playing while you browse tasks/stats/settings. */}
         {!debug && (
           <TimerAudio phase={timer.phase} running={timer.running} soundOn={settings.soundOn} />
         )}
 
-        {/* Per-panel interactive overlays */}
         {!debug && active === 'timer' && <TimerPanel />}
         {!debug && active === 'timer' && <TimerEmote running={timer.running} dark={dark} />}
         {!debug && active === 'tasks' && (
@@ -309,38 +278,13 @@ function App(): React.JSX.Element {
           <SettingsPanel settings={settings} setSettings={setSettings} />
         )}
 
-        {/* Top-bar drag region (always present so dragging works in both modes) */}
-        <div
-          className={`drag-region ${debug ? 'debug-drag-region' : ''}`}
-          style={{
-            left: pct(DRAG_REGION.left),
-            top: pct(DRAG_REGION.top),
-            width: pct(DRAG_REGION.width),
-            height: pct(DRAG_REGION.height)
-          }}
-        >
-          {debug && <span className="debug-label">Drag</span>}
-        </div>
-
-        {/* Hitboxes */}
+        {/* Side panel nav buttons */}
         {SIDE_PANEL.map((b) => (
           <button
             key={b.id}
             className={`hitbox ${debug ? 'debug-outline' : ''}`}
             style={hitboxStyle(b, debug)}
             onClick={() => setActive(b.id)}
-            aria-label={b.label}
-          >
-            {debug && <span className="debug-label">{b.label}</span>}
-          </button>
-        ))}
-
-        {WINDOW_CONTROLS.map((b) => (
-          <button
-            key={b.id}
-            className={`hitbox ${debug ? 'debug-outline' : ''}`}
-            style={hitboxStyle(b, debug)}
-            onClick={() => handleWindowControl(b.id)}
             aria-label={b.label}
           >
             {debug && <span className="debug-label">{b.label}</span>}
@@ -357,7 +301,6 @@ function App(): React.JSX.Element {
           {debug && <span className="debug-label">{RESET_HITBOX.label}</span>}
         </button>
 
-        {/* Start/pause the timer (only over the timer scene). */}
         {active === 'timer' && (
           <button
             className="hitbox"
@@ -372,9 +315,6 @@ function App(): React.JSX.Element {
           />
         )}
 
-        {/* Skip to the next phase — persists on every screen alongside reset.
-            (skip.png art is rendered with the always-on chrome above; opaque art
-            measured at design 426,413 19x20.) */}
         <button
           className="hitbox"
           onClick={timer.skip}
@@ -388,8 +328,6 @@ function App(): React.JSX.Element {
           }}
         />
       </div>
-
-      {/* debug toggle buttons removed */}
     </div>
   )
 }
