@@ -1,0 +1,478 @@
+@import './base.css';
+
+.window-root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* The .canvas keeps its native 1:1 design ratio (sized by 100vw only — never stretched).
+   It's scaled so that the 451-unit-wide visible frame portion fills 100vw, then offset
+   so the frame's top-left (design 30,77) lands at the window's top-left. The OS window
+   is locked to a matching 451:366 aspect via setAspectRatio in src/main/index.ts. */
+.canvas {
+  position: absolute;
+  width: calc(100vw * 512 / 451);
+  height: calc(100vw * 512 / 451);
+  left: calc(-100vw * 30 / 451);
+  top: calc(-100vw * 77 / 451);
+}
+
+.debug-canvas {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px) 0 0 / 6.25% 6.25%,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px) 0 0 / 6.25% 6.25%,
+    #1b1b1f;
+  outline: 1px dashed rgba(255, 255, 255, 0.3);
+  outline-offset: -1px;
+}
+
+.debug-frame-footprint,
+.debug-frame-content {
+  position: absolute;
+  pointer-events: none;
+}
+
+.debug-frame-footprint {
+  outline: 2px solid rgba(255, 255, 255, 0.45);
+  outline-offset: -2px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.debug-frame-content {
+  outline: 2px dashed rgba(255, 255, 255, 0.55);
+  outline-offset: -2px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.debug-frame-footprint .debug-label,
+.debug-frame-content .debug-label {
+  top: 2px;
+  left: 2px;
+  bottom: auto;
+}
+
+.canvas-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  image-rendering: pixelated;
+  -webkit-user-drag: none;
+}
+
+.figma-text {
+  position: absolute;
+  pointer-events: none;
+  white-space: pre-line;
+  font-family: "Five Fonts at Freddy's", 'Courier New', monospace;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+}
+
+.figma-asset {
+  position: absolute;
+  pointer-events: none;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  -webkit-user-drag: none;
+}
+
+/* Settings toggles — pink-fill ON, light OFF, white thumb on ON, muted thumb on OFF. */
+.settings-toggle-track {
+  position: absolute;
+  border: 1px solid #d39fac;
+  border-radius: 999px;
+  padding: 0;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+  transition:
+    background 0.18s ease-out,
+    border-color 0.18s ease-out,
+    transform 0.08s ease-out;
+}
+.settings-toggle-track.is-on {
+  background: #f47fa2;
+  border-color: #c96580;
+}
+.settings-toggle-track.is-off {
+  background: #feddde;
+  border-color: #d39fac;
+}
+.settings-toggle-track:hover {
+  filter: brightness(1.04);
+}
+.settings-toggle-track:active {
+  transform: translateY(1px);
+}
+
+.settings-toggle-thumb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  transition:
+    left 0.24s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.18s ease-out;
+  box-shadow: 0 0 0 1px rgba(137, 55, 96, 0.18);
+}
+.settings-toggle-thumb.is-on {
+  background: #ffffff;
+}
+.settings-toggle-thumb.is-off {
+  background: #e5aebe;
+}
+
+/* Settings modifier — single rounded pill: ◀  N min  ▶ */
+.settings-modifier-pill {
+  position: absolute;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  background: #feddde;
+  border: 1px solid #d39fac;
+  border-radius: 999px;
+  color: #893760;
+  font-family: "Five Fonts at Freddy's", 'Courier New', monospace;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  padding: 0 1.5%;
+  -webkit-app-region: no-drag;
+  line-height: 0;
+}
+
+.settings-modifier-value {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  /* Pixel font glyphs sit at top of em-box; push down so they visually center. */
+  transform: translateY(0.45em);
+}
+
+.settings-modifier-arrow {
+  background: transparent;
+  border: none;
+  color: #893760;
+  margin: 0;
+  padding: 0 0.3em;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+  line-height: 1;
+  transform: translateY(0.05em);
+  transition:
+    transform 0.08s ease-out,
+    opacity 0.12s ease-out;
+}
+.settings-modifier-arrow:hover {
+  transform: translateY(0.00em) scale(1.15);
+}
+.settings-modifier-arrow:active {
+  transform: translateY(0.05em) scale(0.92);
+}
+.settings-modifier-arrow:disabled {
+  transform: translateY(0.00em);
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ----------------------------------------------------------------------------
+   Tasks panel — Figma sprite rows, add field, and filter pills. Single-instance
+   assets render full-frame (canvas-layer); the repeating rows use spriteCropStyle.
+---------------------------------------------------------------------------- */
+
+/* Scrollable list viewport between the add field and the filter bar. */
+.task-list-viewport {
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  container-type: inline-size;
+  -webkit-app-region: no-drag;
+  scrollbar-width: thin;
+  scrollbar-color: #c96580 transparent;
+}
+.task-list-viewport::-webkit-scrollbar {
+  width: 3px;
+}
+.task-list-viewport::-webkit-scrollbar-thumb {
+  background: #c96580;
+  border-radius: 2px;
+}
+.task-list-track {
+  display: flex;
+  flex-direction: column;
+}
+
+/* One task row = task.png pill with the checkbox + text layered on top. */
+.task-row {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  image-rendering: pixelated;
+  -webkit-app-region: no-drag;
+  cursor: grab;
+}
+.task-row:active {
+  cursor: grabbing;
+}
+/* The pill PNG has its own border — show selection by darkening it slightly. */
+.task-row.is-selected {
+  filter: brightness(0.92);
+}
+.task-row.is-drag-over::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 2px;
+  background: #c96580;
+  pointer-events: none;
+}
+
+.task-checkbox {
+  position: absolute;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  image-rendering: pixelated;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+.task-text,
+.task-edit-input {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: #893760;
+  font-family: "Five Fonts at Freddy's", 'Courier New', monospace;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  -webkit-app-region: no-drag;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: text;
+  /* extra top padding so the pixel font sits centered on the pill */
+  padding-top: 0.45em;
+}
+.task-text.is-done {
+  color: #c79aa8;
+  text-decoration: line-through;
+}
+/* Inline editing blends into the pill — no white box, short caret. */
+.task-edit-input {
+  outline: none;
+  background: transparent;
+  caret-color: #893760;
+  line-height: 1;
+}
+
+/* Text input overlaid on the add-task field PNG. */
+.task-add-input {
+  position: absolute;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #893760;
+  font-family: "Five Fonts at Freddy's", 'Courier New', monospace;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  -webkit-app-region: no-drag;
+  box-sizing: border-box;
+  padding: 0.5em 0.6em 0 0.6em;
+}
+.task-add-input::placeholder {
+  color: #a36e7d;
+}
+
+/* Generic transparent hit target (filter segments, "+", trash) — placed inline. */
+.task-hit {
+  position: absolute;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+.task-hit:disabled {
+  cursor: not-allowed;
+}
+
+/* Filter labels — positioned at their exact Figma boxes, centered text. */
+.task-filter-label {
+  position: absolute;
+  pointer-events: none;
+  text-align: center;
+  font-family: "Five Fonts at Freddy's", 'Courier New', monospace;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  color: #a8748a;
+}
+.task-filter-label.is-active {
+  color: #6c2b44;
+}
+
+/* Trash PNG dims when there are no completed tasks to clear. */
+.task-trash-img.is-disabled {
+  opacity: 0.4;
+}
+
+.drag-region {
+  position: absolute;
+  -webkit-app-region: drag;
+}
+
+.debug-drag-region {
+  outline: 2px dashed #00bcd4;
+  outline-offset: -2px;
+  background: rgba(0, 188, 212, 0.15);
+}
+
+.debug-drag-region .debug-label {
+  top: 2px;
+  left: 2px;
+  bottom: auto;
+}
+
+.hitbox {
+  position: absolute;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+.debug-outline {
+  outline: 2px solid var(--debug-color, magenta);
+  outline-offset: -2px;
+}
+
+.debug-label {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  font-size: 9px;
+  line-height: 1;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2px 4px;
+  border-radius: 2px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.debug-toggle {
+  position: fixed;
+  bottom: 4px;
+  right: 4px;
+  -webkit-app-region: no-drag;
+  z-index: 100;
+  font-size: 10px;
+  padding: 2px 6px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Cat-mood emotes (zzz / hearts) are rendered as <img> animation frames in
+   TimerEmote.tsx from the /animations art — no CSS needed for them.
+
+   Debug "skip" button — small pixel pill in the footer strip. */
+.timer-skip {
+  position: absolute;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #893760;
+  background: #feddde;
+  border: none;
+  border-radius: 4px;
+  font-family: "Five Fonts at Freddy's", 'Courier New', monospace;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  image-rendering: pixelated;
+  box-shadow:
+    inset 1px 1px 0 #ffeef0,
+    inset -1px -1px 0 #c96580,
+    0 0 0 1px #893760;
+  transition: transform 0.06s ease-out;
+}
+.timer-skip > span {
+  transform: translateY(0.12em);
+}
+.timer-skip:hover {
+  background: #ffeef0;
+}
+.timer-skip:active {
+  transform: translateY(1px);
+}
+
+/* ----------------------------------------------------------------------------
+   Dark mode. The .dark class is set on .window-root when the Dark Mode setting
+   is on. Figma text colors are overridden inline (see renderFigmaText); here we
+   handle the CSS-colored text and restyle the CSS-drawn settings controls.
+---------------------------------------------------------------------------- */
+
+/* Text across the app -> near-white (#FFFFFD) in dark mode. */
+.dark .task-text,
+.dark .task-edit-input,
+.dark .task-add-input,
+.dark .task-filter-label,
+.dark .task-filter-label.is-active,
+.dark .settings-modifier-value,
+.dark .settings-modifier-arrow,
+.dark .timer-skip {
+  color: #e6dcfa;
+}
+.dark .task-edit-input {
+  caret-color: #e6dcfa;
+}
+.dark .task-add-input::placeholder {
+  color: rgba(230, 220, 250, 0.5);
+}
+.dark .task-text.is-done {
+  color: rgba(230, 220, 250, 0.45);
+}
+
+/* Settings controls — dark surface, near-white text, pink accent kept for "on". */
+.dark .settings-modifier-pill {
+  background: #5e5388;
+  border-color: #8678b0;
+  color: #e6dcfa;
+}
+.dark .settings-modifier-arrow {
+  color: #e6dcfa;
+}
+.dark .settings-toggle-track.is-off {
+  background: #3a3252;
+  border-color: #6f6196;
+}
+.dark .settings-toggle-thumb.is-off {
+  background: #9a8db8;
+}
+.dark .settings-toggle-track.is-on {
+  background: #b9a3e3;
+  border-color: #9580c0;
+}
+.dark .settings-toggle-thumb.is-on {
+  background: #fffffd;
+}
