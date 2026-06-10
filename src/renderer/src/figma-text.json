@@ -1,0 +1,2042 @@
+{
+  "file": {
+    "key": "CQXwq1E7TstpKfkDCnNtbX",
+    "name": "pomodoro",
+    "lastModified": "2026-06-03T06:03:50Z"
+  },
+  "originFrame": {
+    "id": "1:7",
+    "name": "frame 1",
+    "width": 512,
+    "height": 512
+  },
+  "textNodes": [
+    {
+      "id": "7:47",
+      "name": "STUDY TIME",
+      "text": "STUDY TIME",
+      "fontSize": 10,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 21.25,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 246,
+        "y": 143,
+        "width": 68,
+        "height": 21
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "timer"
+      ],
+      "bboxRelative": {
+        "x": 246,
+        "y": 143,
+        "width": 68,
+        "height": 21
+      }
+    },
+    {
+      "id": "3:4",
+      "name": "timer-status",
+      "text": "START",
+      "fontSize": 12,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 25.5,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 261,
+        "y": 331,
+        "width": 45,
+        "height": 26
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "timer"
+      ],
+      "bboxRelative": {
+        "x": 261,
+        "y": 331,
+        "width": 45,
+        "height": 26
+      }
+    },
+    {
+      "id": "3:3",
+      "name": "timer-count",
+      "text": "25:00",
+      "fontSize": 32,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 68,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 227,
+        "y": 256,
+        "width": 106,
+        "height": 39
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "timer"
+      ],
+      "bboxRelative": {
+        "x": 227,
+        "y": 256,
+        "width": 106,
+        "height": 39
+      }
+    },
+    {
+      "id": "4:9",
+      "name": "today’s count:",
+      "text": "today’s count: ",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 143,
+        "y": 417,
+        "width": 69,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "main"
+      ],
+      "bboxRelative": {
+        "x": 143,
+        "y": 417,
+        "width": 69,
+        "height": 17
+      }
+    },
+    {
+      "id": "4:10",
+      "name": "PIXEL POMODORO",
+      "text": "PIXEL POMODORO",
+      "fontSize": 10,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 21.25,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 65,
+        "y": 88,
+        "width": 98,
+        "height": 21
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "main"
+      ],
+      "bboxRelative": {
+        "x": 65,
+        "y": 88,
+        "width": 98,
+        "height": 21
+      }
+    },
+    {
+      "id": "3:5",
+      "name": "TIMER",
+      "text": "TIMER",
+      "fontSize": 7,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 14.875,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 52,
+        "y": 158,
+        "width": 25,
+        "height": 12
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "main"
+      ],
+      "bboxRelative": {
+        "x": 52,
+        "y": 158,
+        "width": 25,
+        "height": 12
+      }
+    },
+    {
+      "id": "4:4",
+      "name": "TASKS",
+      "text": "TASKS",
+      "fontSize": 7,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 14.875,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 51,
+        "y": 221,
+        "width": 27,
+        "height": 15
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "main"
+      ],
+      "bboxRelative": {
+        "x": 51,
+        "y": 221,
+        "width": 27,
+        "height": 15
+      }
+    },
+    {
+      "id": "4:7",
+      "name": "SETTINGS",
+      "text": "SETTINGS",
+      "fontSize": 7,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 14.875,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 44,
+        "y": 350,
+        "width": 41,
+        "height": 15
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "main"
+      ],
+      "bboxRelative": {
+        "x": 44,
+        "y": 350,
+        "width": 41,
+        "height": 15
+      }
+    },
+    {
+      "id": "4:5",
+      "name": "STATS",
+      "text": "STATS",
+      "fontSize": 7,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 14.875,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 51,
+        "y": 285,
+        "width": 27,
+        "height": 15
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "main"
+      ],
+      "bboxRelative": {
+        "x": 51,
+        "y": 285,
+        "width": 27,
+        "height": 15
+      }
+    },
+    {
+      "id": "5:24",
+      "name": "TASKS",
+      "text": "TASKS",
+      "fontSize": 10,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 21.25,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 208,
+        "y": 145,
+        "width": 38,
+        "height": 21
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks"
+      ],
+      "bboxRelative": {
+        "x": 208,
+        "y": 145,
+        "width": 38,
+        "height": 21
+      }
+    },
+    {
+      "id": "37:13",
+      "name": "all",
+      "text": "all",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.42352941632270813,
+            "g": 0.1725490242242813,
+            "b": 0.2666666805744171,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 205,
+        "y": 355,
+        "width": 12,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks"
+      ],
+      "bboxRelative": {
+        "x": 205,
+        "y": 355,
+        "width": 12,
+        "height": 17
+      }
+    },
+    {
+      "id": "37:14",
+      "name": "done",
+      "text": "done",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.42352941632270813,
+            "g": 0.1725490242242813,
+            "b": 0.2666666805744171,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 288,
+        "y": 355,
+        "width": 24,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks"
+      ],
+      "bboxRelative": {
+        "x": 288,
+        "y": 355,
+        "width": 24,
+        "height": 17
+      }
+    },
+    {
+      "id": "37:16",
+      "name": "active",
+      "text": "active",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.42352941632270813,
+            "g": 0.1725490242242813,
+            "b": 0.2666666805744171,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 240,
+        "y": 355,
+        "width": 30,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks"
+      ],
+      "bboxRelative": {
+        "x": 240,
+        "y": 355,
+        "width": 30,
+        "height": 17
+      }
+    },
+    {
+      "id": "37:12",
+      "name": "task description",
+      "text": "task description",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 216,
+        "y": 215,
+        "width": 79,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks",
+        "task 1"
+      ],
+      "bboxRelative": {
+        "x": 216,
+        "y": 215,
+        "width": 79,
+        "height": 17
+      }
+    },
+    {
+      "id": "37:19",
+      "name": "task description",
+      "text": "task description",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 216,
+        "y": 252,
+        "width": 79,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks",
+        "task 2"
+      ],
+      "bboxRelative": {
+        "x": 216,
+        "y": 252,
+        "width": 79,
+        "height": 17
+      }
+    },
+    {
+      "id": "37:11",
+      "name": "+ add a task...",
+      "text": "+ add a task...",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.6392157077789307,
+            "g": 0.4313725531101227,
+            "b": 0.4901960790157318,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 197,
+        "y": 180,
+        "width": 63,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks"
+      ],
+      "bboxRelative": {
+        "x": 197,
+        "y": 180,
+        "width": 63,
+        "height": 17
+      }
+    },
+    {
+      "id": "7:48",
+      "name": "+3",
+      "text": "+3",
+      "fontSize": 7,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 14.875,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 353,
+        "y": 237,
+        "width": 11,
+        "height": 15
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "stats"
+      ],
+      "bboxRelative": {
+        "x": 353,
+        "y": 237,
+        "width": 11,
+        "height": 15
+      }
+    },
+    {
+      "id": "6:32",
+      "name": "pomodoros completed",
+      "text": "pomodoros\ncompleted",
+      "fontSize": 10,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 21.25,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 272,
+        "y": 183,
+        "width": 68,
+        "height": 42
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "stats"
+      ],
+      "bboxRelative": {
+        "x": 272,
+        "y": 183,
+        "width": 68,
+        "height": 42
+      }
+    },
+    {
+      "id": "6:45",
+      "name": "you got this!",
+      "text": "you got this!",
+      "fontSize": 10,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 21.25,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 254,
+        "y": 303,
+        "width": 71,
+        "height": 21
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "stats"
+      ],
+      "bboxRelative": {
+        "x": 254,
+        "y": 303,
+        "width": 71,
+        "height": 21
+      }
+    },
+    {
+      "id": "6:31",
+      "name": "number_completed",
+      "text": "5 ",
+      "fontSize": 20,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 42.5,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 246,
+        "y": 186,
+        "width": 15,
+        "height": 43
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "stats"
+      ],
+      "bboxRelative": {
+        "x": 246,
+        "y": 186,
+        "width": 15,
+        "height": 43
+      }
+    },
+    {
+      "id": "6:28",
+      "name": "TODAY’S STATS",
+      "text": "TODAY’S STATS",
+      "fontSize": 10,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 21.25,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 191,
+        "y": 149,
+        "width": 89,
+        "height": 21
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "stats"
+      ],
+      "bboxRelative": {
+        "x": 191,
+        "y": 149,
+        "width": 89,
+        "height": 21
+      }
+    },
+    {
+      "id": "5:13",
+      "name": "dark mode",
+      "text": "dark mode",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 211,
+        "y": 308,
+        "width": 49,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings"
+      ],
+      "bboxRelative": {
+        "x": 211,
+        "y": 308,
+        "width": 49,
+        "height": 17
+      }
+    },
+    {
+      "id": "5:16",
+      "name": "notification",
+      "text": "notification",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 211,
+        "y": 286,
+        "width": 55,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings"
+      ],
+      "bboxRelative": {
+        "x": 211,
+        "y": 286,
+        "width": 55,
+        "height": 17
+      }
+    },
+    {
+      "id": "5:14",
+      "name": "sound",
+      "text": "sound ",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 211,
+        "y": 264,
+        "width": 30,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings"
+      ],
+      "bboxRelative": {
+        "x": 211,
+        "y": 264,
+        "width": 30,
+        "height": 17
+      }
+    },
+    {
+      "id": "5:18",
+      "name": "short break",
+      "text": "short break",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 196,
+        "y": 230,
+        "width": 59,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings"
+      ],
+      "bboxRelative": {
+        "x": 196,
+        "y": 230,
+        "width": 59,
+        "height": 17
+      }
+    },
+    {
+      "id": "5:21",
+      "name": "long break",
+      "text": "long break",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 196,
+        "y": 207,
+        "width": 52,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings"
+      ],
+      "bboxRelative": {
+        "x": 196,
+        "y": 207,
+        "width": 52,
+        "height": 17
+      }
+    },
+    {
+      "id": "5:19",
+      "name": "focus time",
+      "text": "focus time",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 196,
+        "y": 184,
+        "width": 49,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings"
+      ],
+      "bboxRelative": {
+        "x": 196,
+        "y": 184,
+        "width": 49,
+        "height": 17
+      }
+    },
+    {
+      "id": "5:11",
+      "name": "SETTINGS",
+      "text": "SETTINGS",
+      "fontSize": 10,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 21.25,
+      "textAlignHorizontal": "LEFT",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 211,
+        "y": 145,
+        "width": 58,
+        "height": 21
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings"
+      ],
+      "bboxRelative": {
+        "x": 211,
+        "y": 145,
+        "width": 58,
+        "height": 21
+      }
+    },
+    {
+      "id": "17:32",
+      "name": "25 min",
+      "text": "25 min",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 314,
+        "y": 186,
+        "width": 28,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings",
+        "settings-modifier 1"
+      ],
+      "bboxRelative": {
+        "x": 314,
+        "y": 186,
+        "width": 28,
+        "height": 17
+      }
+    },
+    {
+      "id": "17:47",
+      "name": "15 min",
+      "text": "15 min",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 314,
+        "y": 210,
+        "width": 28,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings",
+        "settings-modifier 2"
+      ],
+      "bboxRelative": {
+        "x": 314,
+        "y": 210,
+        "width": 28,
+        "height": 17
+      }
+    },
+    {
+      "id": "17:53",
+      "name": "5 min",
+      "text": "5 min",
+      "fontSize": 8,
+      "fontFamily": "Five Fonts at Freddy's",
+      "fontWeight": 500,
+      "letterSpacing": 0,
+      "lineHeightPx": 17,
+      "textAlignHorizontal": "CENTER",
+      "textAlignVertical": "TOP",
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.5372549295425415,
+            "g": 0.21568627655506134,
+            "b": 0.3764705955982208,
+            "a": 1
+          }
+        }
+      ],
+      "bbox": {
+        "x": 317,
+        "y": 234,
+        "width": 22,
+        "height": 17
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings",
+        "settings-modifier 3"
+      ],
+      "bboxRelative": {
+        "x": 317,
+        "y": 234,
+        "width": 22,
+        "height": 17
+      }
+    }
+  ],
+  "imageNodes": [
+    {
+      "id": "1:2",
+      "name": "background 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "timer"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "12:3",
+      "name": "background-ornaments 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "timer"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "12:11",
+      "name": "cat-sleeping 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "timer"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "12:10",
+      "name": "cat-awake 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "timer"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "12:4",
+      "name": "background-plants 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "timer"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "12:2",
+      "name": "background-clouds 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "timer"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "13:13",
+      "name": "text-bubble 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "timer"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "13:12",
+      "name": "leaf 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "timer"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "1:9",
+      "name": "pause 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "timer"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "1:10",
+      "name": "play 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "timer"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "1:17",
+      "name": "tasks-frame 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "1:19",
+      "name": "tasks-trash-button 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "37:6",
+      "name": "all 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": -1,
+        "y": 3,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks"
+      ],
+      "bboxRelative": {
+        "x": -1,
+        "y": 3,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "37:3",
+      "name": "active 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": -1,
+        "y": 3,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks"
+      ],
+      "bboxRelative": {
+        "x": -1,
+        "y": 3,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "37:9",
+      "name": "done 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": -1,
+        "y": 3,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks"
+      ],
+      "bboxRelative": {
+        "x": -1,
+        "y": 3,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "37:5",
+      "name": "add 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": -1,
+        "y": 3,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks"
+      ],
+      "bboxRelative": {
+        "x": -1,
+        "y": 3,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "37:4",
+      "name": "add-task 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "37:10",
+      "name": "task 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks",
+        "task 1"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "37:7",
+      "name": "checkbox-done 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks",
+        "task 1"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "37:18",
+      "name": "task 2",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 37,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks",
+        "task 2"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 37,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "37:8",
+      "name": "checkbox 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 37,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "tasks",
+        "task 2"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 37,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "6:41",
+      "name": "stats-frame ",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "stats"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "1:4",
+      "name": "completed-strawberry 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 6,
+        "y": 4,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "stats",
+        "pomodoro-count"
+      ],
+      "bboxRelative": {
+        "x": 6,
+        "y": 4,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "6:35",
+      "name": "completed-strawberry 2",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 31,
+        "y": 4,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "stats",
+        "pomodoro-count"
+      ],
+      "bboxRelative": {
+        "x": 31,
+        "y": 4,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "6:37",
+      "name": "completed-strawberry 3",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 56,
+        "y": 4,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "stats",
+        "pomodoro-count"
+      ],
+      "bboxRelative": {
+        "x": 56,
+        "y": 4,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "6:39",
+      "name": "completed-strawberry 4",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 81,
+        "y": 4,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "stats",
+        "pomodoro-count"
+      ],
+      "bboxRelative": {
+        "x": 81,
+        "y": 4,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "6:42",
+      "name": "completed-strawberry 5",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 106,
+        "y": 4,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "stats",
+        "pomodoro-count"
+      ],
+      "bboxRelative": {
+        "x": 106,
+        "y": 4,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "1:5",
+      "name": "empty-strawberry 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 131,
+        "y": 4,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "stats",
+        "pomodoro-count"
+      ],
+      "bboxRelative": {
+        "x": 131,
+        "y": 4,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "64:3",
+      "name": "strawberry-stat-display",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 188,
+        "y": 167,
+        "width": 60,
+        "height": 60
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "stats"
+      ],
+      "bboxRelative": {
+        "x": 188,
+        "y": 167,
+        "width": 60,
+        "height": 60
+      }
+    },
+    {
+      "id": "12:9",
+      "name": "stats-cat 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "stats"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "5:12",
+      "name": "settings-frame - 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "12:8",
+      "name": "settings-star 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "12:7",
+      "name": "settings-plant 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "12:6",
+      "name": "settings-ornaments 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "id": "12:5",
+      "name": "settings-cat 1",
+      "type": "RECTANGLE",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "parents": [
+        "Document",
+        "Page 1",
+        "settings"
+      ],
+      "bboxRelative": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      }
+    }
+  ]
+}
