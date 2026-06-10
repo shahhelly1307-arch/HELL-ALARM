@@ -125,6 +125,7 @@ function App(): React.JSX.Element {
 
   return (
     <div className={`window-root ${dark ? 'dark' : ''}`}>
+      <div className="canvas-wrapper">
       <div className={`canvas ${debug ? 'debug-canvas' : ''}`}>
         {/* Debug wireframe overlays */}
         {debug && (
@@ -327,6 +328,7 @@ function App(): React.JSX.Element {
             height: pct(20)
           }}
         />
+      </div>
       </div>
     </div>
   )
